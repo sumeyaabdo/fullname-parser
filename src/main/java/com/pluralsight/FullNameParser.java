@@ -8,10 +8,24 @@ public class FullNameParser {
 
         // Asking for name
         System.out.println("Please enter your name: ");
-        System.out.println("First Name: ");
-        String firstName = scanner.nextLine();
-        String first = firstName.trim();
+        String fullName = scanner.nextLine();
+        String full = fullName.trim();
 
-        System.out.println();
+        String[] name = full.split(" ");
+        String first = name[0];
+        String middle, last;
+
+        if (name.length == 3){
+          middle = name[1];
+          last = name[2];
+        } else {
+            middle = "(none)";
+            last = name[1];
+        }
+
+        System.out.println("First name: " + first);
+        System.out.println("Middle name: " + middle);
+        System.out.println("Last name: " + last);
+
     }
 }
